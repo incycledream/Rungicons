@@ -66,10 +66,3 @@ jobs:
           name: ThemedIconsOverlay
           path: |
             build/ThemedIconsOverlay.apk
-      - name: Send to Telegram
-        env:
-          APIID: ${{ secrets.APIID }}
-          APIHASH: ${{ secrets.APIHASH }}
-          BOTTOKEN: ${{ secrets.BOTTOKEN }}
-          CHATID: ${{ secrets.CHATID }}
-        run: python3 .github/scripts/send.py build/ThemedIconsOverlay.apk  ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
